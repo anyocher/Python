@@ -21,7 +21,7 @@ O objetivo deste repositório é:
 O repositório está organizado em diferentes tópicos de estudo:
 
 1. **Introdução ao Python**
-   - Instalação do Python
+   - Instalação do Python https://www.python.org/downloads/
    - Hello World
    - Variáveis e tipos de dados
    - Operadores básicos
