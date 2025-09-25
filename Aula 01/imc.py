@@ -1,5 +1,5 @@
 # d-)criar um programa que calcule o IMC do usuário baseado no site da UNIMED
-print("Calculadora de IMC\n)
+print("Calculadora de IMC")
 
 # Entrada de dados
 peso = float(input("Digite seu peso (em kg): "))

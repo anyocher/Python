@@ -1,5 +1,4 @@
-#c) Crie uma calculadora com as 4 operações matemáticas (Multiplicação, Soma,
-Subtração e Divisão);
+#c) Crie uma calculadora com as 4 operações matemáticas (Multiplicação, Soma, Subtração e Divisão);
 print("=== Calculadora Básica ===")
 
 # Entrada de dados
