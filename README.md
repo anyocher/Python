@@ -7,8 +7,10 @@
 
 ### Professor
 [Jansen Leite](https://github.com/JansenLeite)
-[Pthon](https://www.python.org/ftp/python/3.10.7/python-3.10.7-amd64.exe)
-[git](https://git-scm.com/downloads/win)
+
+[Ptyhon](https://www.python.org/ftp/python/3.10.7/python-3.10.7-amd64.exe)
+
+[GIT](https://git-scm.com/downloads/win)
 
 
 Python é uma linguagem de programação de alto nível, interpretada, orientada a objetos e de tipagem dinâmica. Criada por Guido van Rossum em 1991, destaca-se pela simplicidade da sintaxe e pela legibilidade do código, o que a torna acessível para iniciantes e, ao mesmo tempo, poderosa para desenvolvedores experientes.
