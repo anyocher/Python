@@ -8,26 +8,24 @@
 ### Professor
 [Jansen Leite](https://github.com/JansenLeite)
 
-----
 
 Python é uma linguagem de programação de alto nível, interpretada, orientada a objetos e de tipagem dinâmica. Criada por Guido van Rossum em 1991, destaca-se pela simplicidade da sintaxe e pela legibilidade do código, o que a torna acessível para iniciantes e, ao mesmo tempo, poderosa para desenvolvedores experientes.
 É amplamente utilizada em diversas áreas, como desenvolvimento web, ciência de dados, inteligência artificial, automação, segurança da informação e análise de dados. Possui uma comunidade ativa e um extenso ecossistema de bibliotecas, o que facilita a resolução de problemas e acelera o desenvolvimento de aplicações.
 
----
+
 ##  Objetivo
 O objetivo deste repositório é:
 - Aprender os conceitos básicos e avançados de Python.
 - Praticar com exercícios e pequenos projetos.
 - Criar um portfólio de códigos que demonstre habilidades em Python.
 
----
 
 ##  Conteúdos
 
 O repositório está organizado em diferentes tópicos de estudo:
 
 1. **Introdução ao Python**
-   - Instalação do Python https://www.python.org/downloads/
+   - Instalação do Python [Python](https://www.python.org/downloads)
    - Hello World
    - Variáveis e tipos de dados
    - Operadores básicos
