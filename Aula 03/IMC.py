@@ -37,7 +37,7 @@ def Calcular_imc():
 while True:
     Calcular_imc()
 
-    continuar = input("\nDeseja realizar outro cálculo de IMC? (s/n): ").strip().lower()
+    continuar = input("\nDeseja realizar outro cálculo de IMC? (s/n): ")
     if continuar != 's':
         print("Encerrando o programa. Obrigado!")
         break

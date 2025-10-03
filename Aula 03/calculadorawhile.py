@@ -30,7 +30,7 @@ while True:
         resultado = n1 - n2
         print(f"\nResultado: {n1} - {n2} = {resultado}")
     elif opcao == "3":
-        resultado = n1 * n2
+        resultado = n1 * n2 
         print(f"\nResultado: {n1} * {n2} = {resultado}")
     elif opcao == "4":
         if n2 != 0:
@@ -40,3 +40,4 @@ while True:
             print("\nErro: Divisão por zero não é permitida!")
     else:
         print("\nOpção inválida! Tente novamente.")
+        

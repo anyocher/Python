@@ -27,7 +27,7 @@ elif 30 <= imc < 39.9:
     print("Classificação: Obesidade") 
   # se for maior que 39,9 é obesidade grave 
 else:
-    print("Classificação: Obesidade grave")
+    print("Classificação: Obesidade grave") 
 
 
 #
