@@ -8,10 +8,11 @@ while True:
         circunferencia = float(input("Digite o valor da circunferência (C): "))
         raio = circunferencia / (2 * math.pi) #uso da biblioteca 
         print(f"O raio da circunferência é: {raio:.2f}")
+
     except ValueError:
-        print("Entrada inválida. Por favor, digite um número válido.")
+        print("Entrada inválida....")
     
-    continuar = input("\nDeseja calcular novamente? (s/n): ").strip().lower()
+    continuar = input("\nDeseja calcular novamente? (s/n): ")
     if continuar != 's':
         print("Encerrando o programa.")
         break
