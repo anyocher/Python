@@ -1,4 +1,4 @@
-# a) Criar um programa em Python onde o usuário irá digitar seu nome completo, idade e peso e ao final deverá mostrar todos os dados de forma personalizada;
+# a) Criar um programa em Python onde o usuário irá digitar seu nome completo, idade e peso. Usando 3 funções, sendo elas de inclusão de dados, mostrar dados e por fim a saida de dados
 # Entrada de dados
 nome = input("Digite seu nome completo: ")
 idade = input("Digite sua idade: ")
