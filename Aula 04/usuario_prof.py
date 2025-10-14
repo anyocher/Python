@@ -33,3 +33,4 @@ if __name__ == "__main__":
         continuar = input("Deseja continuar? (s/n): ").strip()
     
     print("Obrigado por usar o programa!")
+  
