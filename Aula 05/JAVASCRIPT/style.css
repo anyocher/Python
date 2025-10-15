@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #dfcef7;
+}
+
+text {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+placeholder {
+    
+}

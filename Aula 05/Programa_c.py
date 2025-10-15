@@ -3,7 +3,8 @@ class calculadora_simples:
 
     def recebe_dados(self):
         campos = 1
-        while True:
+        start_campos = True
+        while start_campos:
             match campos:
                 case 1:
                     try:
@@ -21,21 +22,21 @@ class calculadora_simples:
 
                 case 3:
                     try:
-                        print("\nEscolha a operação desejável\n")
-                        print("Digite X (para multiplicar)")
-                        print("Digite / (para dividir)")
-                        print("Digite + (para somar)")
-                        print("Digite - (para subtrair)")
+                        print("\n####### OPERAÇÕES #######\n")
+                        print("Digite X para multiplicar")
+                        print("Digite / para dividir")
+                        print("Digite + para somar")
+                        print("Digite - para subtrair")
                         self.oper = str(input("Informe uma operação: ").replace(",", "."))
                         if self.oper == "x" or self.oper == "X" or self.oper == "/" or self.oper == "+" or self.oper == "-":
-                            return False
+                            start_campos = False
                         else:
                             print("Operador inválido...")
 
                     except:
                         print("Erro: Campo inválido...")
 
-    def processa_dados(self): 
+    def processa_dados(self):
         match self.oper:
             case "X" | "x":
                 self.resultado = self.num1 * self.num2
@@ -47,13 +48,14 @@ class calculadora_simples:
                 self.resultado = self.num1 - self.num2
 
     def mostra_dados(self):
-        print("Resultado")
+        print("\n###### Resultado #######")
         print("O resultado é ", self.resultado)
 
-carrega_classe = calculadora_simples()
-start_programa = True
-while start_programa:
-    carrega_classe.recebe_dados()
-    carrega_classe.processa_dados()
-    carrega_classe.mostra_dados()
-    start_programa = finaliza_programa()
+if __name__ == "__main__":
+    carrega_classe = calculadora_simples()
+    start_programa = True
+    while start_programa:
+        carrega_classe.recebe_dados()
+        carrega_classe.processa_dados()
+        carrega_classe.mostra_dados()
+        start_programa = finaliza_programa()
