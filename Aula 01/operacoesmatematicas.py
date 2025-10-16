@@ -10,6 +10,7 @@ print("1 - Soma (+)")
 print("2 - Subtração (-)")
 print("3 - Multiplicação (*)")
 print("4 - Divisão (/)")
+print("5 - Porcentagem(5)")
 
 opcao = input("Digite o número da operação: ")
 
@@ -27,6 +28,10 @@ elif opcao == "4":
     if n2 != 0:
         resultado = n1 / n2
         print(f"\nResultado: {n1} / {n2} = {resultado}")
+elif opcao == "5":
+    if n2 != 0:
+        resultado = (n1 * n2) / 100
+        print(f"\nResultado: {n2}% de {n1} = {resultado}")
     else:
         print("\nErro: Divisão por zero não é permitida!")
 else:
