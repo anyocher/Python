@@ -1,7 +1,17 @@
-<p align="center">
-  <img src="https://www.python.org/static/community_logos/python-logo.png" width="150">
-</p>
+### Professor
+[Jansen Leite](https://github.com/JansenLeite)
 
+## Login
+
+- Usuario = admin
+- Senha = 1234
+
+## COTAFRETE - Avaliação Python Jansen Leite
+
+##  Descrição
+**COTAFRETE** é um sistema desenvolvido em Python com o objetivo de calcular cotações de frete com base em dados como aeroporto de destino, dimensões da embalagem, peso e tipo de embalagem. Além disso, o sistema conta com uma calculadora integrada com funções matemáticas básicas.
+
+Este projeto é parte do **Projeto Python 02**.
 
 ---
 
@@ -10,19 +20,6 @@
 
 ---
 
-### Login
-
-- Usuario = admin
-- Senha = 1234
-
-#  COTAFRETE - Sistema de Cotação de Frete
-
-##  Descrição
-**COTAFRETE** é um sistema desenvolvido em Python com o objetivo de calcular cotações de frete com base em dados como aeroporto de destino, dimensões da embalagem, peso e tipo de embalagem. Além disso, o sistema conta com uma calculadora integrada com funções matemáticas básicas.
-
-Este projeto é parte do **Projeto Python 02**.
-
----
 
 ## Requisitos Não-Funcionais (RNF)
 
