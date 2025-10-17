@@ -4,8 +4,8 @@ def login():
     valid_password = "1234"
     
     while True:
-        username = input("Digite o usuário ")
-        password = input("Digite a senha ")
+        username = input("Digite o usuário (letras e números): ")
+        password = input("Digite a senha (letras e números): ")
         
         if username == valid_user and password == valid_password:
             print("Login realizado com sucesso!")
@@ -105,6 +105,7 @@ def menu_cotacao_frete():
     
     custo_frete = ((altura * largura * profundidade * peso) * (1 + fator_custo)) * (1 + (distancia * 9.8))
     print(f"Custo do Frete: R$ {custo_frete:.2f}")
+
 
 def main_menu():
     print("\n--- Menu Principal ---")
