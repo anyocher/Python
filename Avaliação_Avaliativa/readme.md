@@ -1,10 +1,20 @@
+<div align="center">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40" alt="python logo"  />
+</div>
+
+<div align="center">
+  
 ### Professor
 [Jansen Leite](https://github.com/JansenLeite)
+---
 
-## Login
+  Usuario = admin
+  
+  Senha = 1234
 
-- Usuario = admin
-- Senha = 1234
+</div>
+
+---
 
 ## COTAFRETE - Avaliação Python Jansen Leite
 
