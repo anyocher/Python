@@ -1,132 +1,186 @@
-# Tela de Login
-def login():
-    valid_user = "admin"
-    valid_password = "1234"
+# Projeto COTAFRETE - Sistema de Cotação de Frete e Calculadora
+# Desenvolvido em Python
+
+import os
+
+# Função para limpar a tela (compatível com Windows e Unix)
+def limpar_tela():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+# Tabela de Aeroportos e Distâncias (Origem: Guarulhos-SP)
+tabela_aeroportos = {
+    "Viracopos": 102,
+    "Congonhas-SP": 98,
+    "Campo de Marte-SP": 112,
+    "Pinto Martins-CE": 2922,
+    "Eduardo Gomes-AM": 6294
+}
+
+# Credenciais de login (hardcoded para simplicidade)
+usuario_correto = "admin"
+senha_correta = "123"
+
+# Tela Inicial [RNF001]
+def tela_inicial():
+    limpar_tela()
+    print("=" * 50)
+    print("         BEM-VINDO AO COTAFRETE")
+    print("    Sistema de Cotação de Frete e Calculadora")
+    print("=" * 50)
+    input("Pressione Enter para continuar...")
+
+# Tela de Login [RNF002]
+def tela_login():
+    limpar_tela()
+    print("TELA DE LOGIN")
+    print("-" * 20)
+    usuario = input("Digite o usuário: ")
+    senha = input("Digite a senha: ")
     
+    if usuario == usuario_correto and senha == senha_correta:
+        print("Login bem-sucedido!")
+        input("Pressione Enter para continuar...")
+        return True
+    else:
+        print("Erro: Usuário ou senha incorretos.")
+        input("Pressione Enter para tentar novamente...")
+        return False
+
+# Menu Principal [RNF003]
+def menu_principal():
     while True:
-        username = input("Digite o usuário (letras e números): ")
-        password = input("Digite a senha (letras e números): ")
+        limpar_tela()
+        print("MENU PRINCIPAL")
         
-        if username == valid_user and password == valid_password:
-            print("Login realizado com sucesso!")
-            main_menu()
-            break
-        else:
-            print("Erro: Usuário ou senha incorretos. Tente novamente.")
-# Função para Calculadora
-def calculadora():
-    print("\n--- Calculadora ---")
-    print("1. Soma")
-    print("2. Divisão")
-    print("3. Subtração")
-    print("4. Adição")
-    print("5. Porcentagem")
-    print("6. Voltar ao Menu Principal")
-    
-    while True:
-        operacao = input("Escolha uma operação: ")
-        if operacao == "1":
-            numeros = input("Digite os números separados por espaço: ").split()
-            resultado = sum(map(float, numeros))
-            print(f"Resultado da Soma: {resultado}")
-        elif operacao == "2":
-            try:
-                num1 = float(input("Digite o primeiro número: "))
-                num2 = float(input("Digite o segundo número: "))
-                resultado = num1 / num2
-                print(f"Resultado da Divisão: {resultado}")
-            except ZeroDivisionError:
-                print("Erro: Divisão por zero não é permitida.")
-        elif operacao == "3":
-            num1 = float(input("Digite o primeiro número: "))
-            num2 = float(input("Digite o segundo número: "))
-            resultado = num1 - num2
-            print(f"Resultado da Subtração: {resultado}")
-        elif operacao == "4":
-            num1 = float(input("Digite o primeiro número: "))
-            num2 = float(input("Digite o segundo número: "))
-            resultado = num1 + num2
-            print(f"Resultado da Adição: {resultado}")
-        elif operacao == "5":
-            valor = float(input("Digite o valor: "))
-            porcentagem = float(input("Digite a porcentagem: "))
-            resultado = (valor * porcentagem) / 100
-            print(f"Resultado da Porcentagem: {resultado}")
-        elif operacao == "6":
-            print("Voltando ao Menu Principal...")
+        print("-" * 20)
+        print("1. Cotação de Frete")
+        print("2. Calculadora")
+        print("3. Sair")
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == "1":
+            menu_cotacao_frete()
+        elif opcao == "2":
+            menu_calculadora()
+        elif opcao == "3":
+            print("Saindo do sistema...")
             break
         else:
             print("Opção inválida. Tente novamente.")
+            input("Pressione Enter para continuar...")
 
-
-# Função para Menu Cotação de Frete
+# Menu Cotação de Frete
 def menu_cotacao_frete():
-    print("\n--- Menu Cotação de Frete ---")
-    aeroportos = {
-        "Congonhas-SP": 102,
-        "Guarulhos-SP": 112,
-        "Campo de Marte-SP": 98,
-        "Pinto Martins-CE": 2922,
-        "Eduardo Gomes-AM": 6294
-    }
+    limpar_tela()
+    print("COTAÇÃO DE FRETE")
+    print("-" * 20)
     
-    print("Aeroportos disponíveis:")
-    for aeroporto in aeroportos:
-        print(f"- {aeroporto}")
+    # Solicitar Aeroporto de Destino
+    print("Aeroportos disponíveis (Origem: Guarulhos-SP):")
+    for aeroporto, distancia in tabela_aeroportos.items():
+        print(f"- {aeroporto}: {distancia} KM")
     
-    destino = input("Digite o Aeroporto de Destino: ")
-    if destino not in aeroportos:
-        print("Erro: Aeroporto de destino inválido.")
+    aeroporto_destino = input("Digite o Aeroporto de Destino: ").strip()
+    if aeroporto_destino not in tabela_aeroportos:
+        print("Aeroporto inválido.")
+        input("Pressione Enter para voltar...")
         return
     
-    embalagem = input("Digite o tipo de embalagem (Caixa Papelão ou Container): ").strip().lower()
+    distancia = tabela_aeroportos[aeroporto_destino]
+    
+    # Solicitar Embalagem
+    embalagem = input("Digite a Embalagem (Caixa Papelão ou Container): ").strip().lower()
     if embalagem not in ["caixa papelão", "container"]:
-        print("Erro: Tipo de embalagem inválido.")
+        print("Embalagem inválida.")
+        input("Pressione Enter para voltar...")
         return
     
+   
     try:
-        altura = float(input("Digite a Altura (em metros para Caixa Papelão ou em cm para Container): "))
-        largura = float(input("Digite a Largura (em metros para Caixa Papelão ou em cm para Container): "))
-        profundidade = float(input("Digite a Profundidade (em metros para Caixa Papelão ou em cm para Container): "))
+        altura = float(input("Digite a Altura: "))
+        largura = float(input("Digite a Largura: "))
+        profundidade = float(input("Digite a Profundidade: "))
         peso = float(input("Digite o Peso (em Kg): "))
         total_itens = int(input("Digite o Total de Itens: "))
     except ValueError:
-        print("Erro: Entrada inválida. Certifique-se de digitar números válidos.")
+        print("Valores inválidos. Use números.")
+        input("Pressione Enter para voltar...")
         return
     
-    distancia = aeroportos[destino]
+    # Cálculo do custo
     if embalagem == "caixa papelão":
-        fator_custo = 0.26
+        # Y = Altura (Mt), X = Largura (Mt), Z = Profundidade (Mt), W = Peso (Kg), F = 0.26
+        y, x, z, w, f = altura, largura, profundidade, peso, 0.26
+        volume = y * x * z * w
+        custo = (volume * (1 + f)) * (1 + (distancia * 9.8))
     elif embalagem == "container":
-        fator_custo = 0.37
-        altura /= 100
-        largura /= 100
-        profundidade /= 100
+        # Y = Altura (cm), X = Largura (cm), Z = Profundidade (cm), W = Peso (Kg), F = 0.37
+        y, x, z, w, f = altura, largura, profundidade, peso, 0.37
+        volume = y * x * z * w
+        custo = (volume * (1 + f)) * (1 + (distancia * 9.8))
     
-    custo_frete = ((altura * largura * profundidade * peso) * (1 + fator_custo)) * (1 + (distancia * 9.8))
-    print(f"Custo do Frete: R$ {custo_frete:.2f}")
+    custo_total = custo * total_itens
+    
+    print(f"\nCusto estimado do frete: R$ {custo_total:.2f}")
+    input("Pressione Enter para voltar ao menu...")
 
-
-def main_menu():
-    print("\n--- Menu Principal ---")
-    print("1. Calculadora")
-    print("2. Menu Cotação de Frete")
-    print("3. Sair")
+# Menu Calculadora
+def menu_calculadora():
+    limpar_tela()
+    print("CALCULADORA")
+    print("-" * 20)
+    print("Operações disponíveis:")
+    print("1. Soma (Adição)")
+    print("2. Subtração")
+    print("3. Multiplicação")
+    print("4. Divisão")
+    print("5. Porcentagem")
+    print("6. Voltar")
     
     while True:
-        choice = input("Escolha uma opção: ")
-        if choice == "1":
-            calculadora()
-        elif choice == "2":
-            menu_cotacao_frete()
-        elif choice == "3":
-            print("Saindo do sistema. Até logo!")
+        opcao = input("Escolha uma operação: ")
+        
+        if opcao in ["1", "2", "3", "4", "5"]:
+            try:
+                num1 = float(input("Digite o primeiro número: "))
+                num2 = float(input("Digite o segundo número: "))
+                
+                if opcao == "1":
+                    resultado = num1 + num2
+                    print(f"Resultado: {num1} + {num2} = {resultado}")
+                elif opcao == "2":
+                    resultado = num1 - num2
+                    print(f"Resultado: {num1} - {num2} = {resultado}")
+                elif opcao == "3":
+                    resultado = num1 * num2
+                    print(f"Resultado: {num1} * {num2} = {resultado}")
+                elif opcao == "4":
+                    if num2 != 0:
+                        resultado = num1 / num2
+                        print(f"Resultado: {num1} / {num2} = {resultado}")
+                    else:
+                        print("Erro: Divisão por zero.")
+                elif opcao == "5":
+                    resultado = (num1 * num2) / 100
+                    print(f"Resultado: {num1}% de {num2} = {resultado}")
+                
+                input("Pressione Enter para continuar...")
+            except ValueError:
+                print("Valores inválidos. Use números.")
+                input("Pressione Enter para continuar...")
+        elif opcao == "6":
             break
         else:
-            print("Opção inválida. Tente novamente.")
+            print("Opção inválida.")
+            input("Pressione Enter para continuar...")
+
+
+def main():
+    tela_inicial()
+    while not tela_login():
+        pass  # Loop até login bem-sucedido
+    menu_principal()
 
 
 if __name__ == "__main__":
-    print("----------------COTAFRETE----------------")
-    print("Bem vindo ao sistema de cotação de frete!")
-    login()
+    main()
