@@ -1,13 +1,7 @@
-# Projeto COTAFRETE - Sistema de Cotação de Frete e Calculadora
-# Desenvolvido em Python
+import os #biblioteca para fazer sumir os dados 
 
-import os
-
-# Função para limpar a tela (compatível com Windows e Unix)
 def limpar_tela():
     os.system('cls' if os.name == 'nt' else 'clear')
-
-# Tabela de Aeroportos e Distâncias (Origem: Guarulhos-SP)
 tabela_aeroportos = {
     "Viracopos": 102,
     "Congonhas-SP": 98,
@@ -16,20 +10,16 @@ tabela_aeroportos = {
     "Eduardo Gomes-AM": 6294
 }
 
-# Credenciais de login (hardcoded para simplicidade)
 usuario_correto = "admin"
-senha_correta = "123"
+senha_correta = "1234"
 
-# Tela Inicial [RNF001]
 def tela_inicial():
     limpar_tela()
-    print("=" * 50)
-    print("         BEM-VINDO AO COTAFRETE")
-    print("    Sistema de Cotação de Frete e Calculadora")
-    print("=" * 50)
+    print("BEM-VINDO AO COTAFRETE")
+    print("Sistema de Cotação de Frete e Calculadora")
     input("Pressione Enter para continuar...")
 
-# Tela de Login [RNF002]
+
 def tela_login():
     limpar_tela()
     print("TELA DE LOGIN")
@@ -46,7 +36,6 @@ def tela_login():
         input("Pressione Enter para tentar novamente...")
         return False
 
-# Menu Principal [RNF003]
 def menu_principal():
     while True:
         limpar_tela()
@@ -69,13 +58,11 @@ def menu_principal():
             print("Opção inválida. Tente novamente.")
             input("Pressione Enter para continuar...")
 
-# Menu Cotação de Frete
 def menu_cotacao_frete():
     limpar_tela()
     print("COTAÇÃO DE FRETE")
     print("-" * 20)
     
-    # Solicitar Aeroporto de Destino
     print("Aeroportos disponíveis (Origem: Guarulhos-SP):")
     for aeroporto, distancia in tabela_aeroportos.items():
         print(f"- {aeroporto}: {distancia} KM")
@@ -88,7 +75,7 @@ def menu_cotacao_frete():
     
     distancia = tabela_aeroportos[aeroporto_destino]
     
-    # Solicitar Embalagem
+
     embalagem = input("Digite a Embalagem (Caixa Papelão ou Container): ").strip().lower()
     if embalagem not in ["caixa papelão", "container"]:
         print("Embalagem inválida.")
@@ -178,7 +165,7 @@ def menu_calculadora():
 def main():
     tela_inicial()
     while not tela_login():
-        pass  # Loop até login bem-sucedido
+        pass  
     menu_principal()
 
 
