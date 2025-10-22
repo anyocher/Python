@@ -15,14 +15,9 @@ senha_correta = "1234"
 
 def tela_inicial():
     limpar_tela()
-<<<<<<< HEAD
-    print("==BEM-VINDO AO COTAFRETE==")
-    input("Pressione Enter para continuar...")
-=======
     print("BEM-VINDO AO COTAFRETE")
     input("Pressione Enter para continuar")
 
->>>>>>> 00b34c9008a4b4a445f180e6cb41e2dce4c16ee1
 
 
 def tela_login():
