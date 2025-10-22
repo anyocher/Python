@@ -15,8 +15,7 @@ senha_correta = "1234"
 
 def tela_inicial():
     limpar_tela()
-    print("BEM-VINDO AO COTAFRETE")
-    print("Sistema de Cotação de Frete e Calculadora")
+    print("==BEM-VINDO AO COTAFRETE==")
     input("Pressione Enter para continuar...")
 
 
@@ -114,23 +113,22 @@ def menu_cotacao_frete():
 # Menu Calculadora
 def menu_calculadora():
     limpar_tela()
-    print("CALCULADORA")
-    print("-" * 20)
-    print("Operações disponíveis:")
+    print("--CALCULADORA--")
+    print("Faça sua escolha:")
     print("1. Soma (Adição)")
     print("2. Subtração")
     print("3. Multiplicação")
     print("4. Divisão")
     print("5. Porcentagem")
     print("6. Voltar")
-    
+
     while True:
         opcao = input("Escolha uma operação: ")
         
         if opcao in ["1", "2", "3", "4", "5"]:
             try:
-                num1 = float(input("Digite o primeiro número: "))
-                num2 = float(input("Digite o segundo número: "))
+                num1 = float(input("Digite o primeiro número: ").replace("," , "."))
+                num2 = float(input("Digite o segundo número: ").replace("," , "."))
                 
                 if opcao == "1":
                     resultado = num1 + num2
