@@ -2,9 +2,9 @@ import mod_inputs
 import finaliza_programa
 
 def mensagem():
-    print("\n############################################")
-    print("<<<<<<<<< Seja bem vindo a Calculadora >>>>>")
-    print("############################################\n")
+    print("#" * 20)
+    print("Seja bem vindo a Calculadora")
+    print("#" * 20)
 
 def recebe_campo1():
     num = mod_inputs.inp_float("Digite o primeiro número: ")
@@ -32,7 +32,7 @@ def processa_calculo(num1, num2, opc):
     return resultado
 
 def exibe_resultado(resultado):
-    print("\n<<<<<<<< Resultado >>>>>>>>>")
+    print("\nResultado")
     print("O resultado é : ", resultado)
 
 def main():
