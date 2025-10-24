@@ -2,7 +2,7 @@ import mod_inputs
 import calculadora
 
 def menu():
-    print("\n Escolha um programa: ")
+    print("\nEscolha um programa: ")
     print("Sair => 0 | Calculadora => 1 | Cota frete => 2 ")
 
 def recebe_menu():

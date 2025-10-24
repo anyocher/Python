@@ -9,4 +9,4 @@ acesso = login.main()
 if acesso:
     menu_principal.main()
 
-print("\n🌷Obrigado por usar o sistema!! Até a proxima :) 🌷 \n")
+print("\n🌷   Obrigado por usar o sistema!! Até a proxima   🌷 \n")
