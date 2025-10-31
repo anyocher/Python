@@ -1,12 +1,11 @@
 import login
 import menu_principal
-print("+" * 25)
-print("        COTAFRETE")
-print("+" * 25)
-print("\n")
+import letreiro
 
+print("\nSeja bem vindo ao sistema\n")
+print(letreiro.banner_pagga("COTA-FRETE"))
 acesso = login.main()
 if acesso:
     menu_principal.main()
 
-print("\n🌷   Obrigado por usar o sistema!! Até a proxima   🌷 \n")
+print("\n<<<<<< Obrigado por utilizar o sistema COTAFRETE! Até a próxima! >>>>>>>>>>")

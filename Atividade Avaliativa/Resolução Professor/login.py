@@ -1,29 +1,28 @@
 import mod_inputs
 
 def msg_login():
-    print("+" * 25)
-    print("          Login")
-    print("+" * 25)
-    print("\n")
+    print("-" * 20)
+    print("LOGIN DO SISTEMA")
+    print("-" * 20)
 
 def recebe_usuario():
-    usuario = mod_inputs.inp_str("Digite seu usuario: ")
-    return usuario 
+    usuario = mod_inputs.inp_str("Digite seu usuário de acesso: ")
+    return usuario
 
 def recebe_senha():
-    senha = mod_inputs.inp_str("Digite sua senha: ")
-    return senha 
+    senha = mod_inputs.inp_str("Digite sua senha de acesso: ")
+    return senha
 
 def valida_usuario(usuario, senha):
-    cad_usuario = "admin"
-    cad_senha = "1234"
+    cad_usuario = "jansen"
+    cad_senha = "123"
 
     if cad_usuario == usuario and cad_senha == senha:
-        acesso = False 
+        acesso = False
     else:
-        print("Usuario ou senha incorretos... Realize novamente!!!")
+        print("Usuário ou senha incorretos... Por favor, tente novamente!")
         acesso = True
-    return acesso 
+    return acesso
 
 def main():
     msg_login()
@@ -32,7 +31,8 @@ def main():
         usuario = recebe_usuario()
         senha = recebe_senha()
         autentica = valida_usuario(usuario, senha)
-        return True
+    return True
 
 if __name__ == "__main__":
     main()
+
