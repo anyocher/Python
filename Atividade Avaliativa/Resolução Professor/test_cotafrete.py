@@ -1,4 +1,6 @@
+from Cotafrete import calcular_frete
 import cota_frete
+import pytest
 
 def test_tabela_distancia_1():
     destino = 1
@@ -34,7 +36,7 @@ def test_calcula_frete_1():
     profundidade = 1
     peso = 1
     fator = cota_frete.calcula_frete(destino, embalagem, altura , largura, profundidade, peso)
-    assert fator == cota_frete.
+    assert fator == cota_frete
 
 def test_calcula_frete_2():
     destino = 1
@@ -46,3 +48,20 @@ def test_calcula_frete_2():
     peso = 1
     fator = cota_frete.calcula_frete(destino, embalagem, altura , largura, profundidade, peso)
     assert fator == ((altura * largura * profundidade * peso) * (1 + fator)) * (1+(distancia * 9.8))
+    
+    
+# Adicionado código para teste de embalagem caixa papelao e container, embalagem invalida se voce colocar "sacola"como exemplo | usado import pytest 
+def test_calculo_caixa_papelao():
+    resultado = calcular_frete(100, 1, 1, 1, 2, 1, "caixa papelão")
+    esperado = (1 * (1 + 0.26)) * (1 + (100 * 9.8)) * 2  # conforme sua fórmula
+    assert resultado == esperado
+
+def test_calculo_container():
+    resultado = calcular_frete(50, 1, 1, 1, 1, 2, "container")
+    esperado = (1 * (1 + 0.37)) * (1 + (50 * 9.8)) * 2
+    assert resultado == esperado
+
+def test_embalagem_invalida():
+    
+    with pytest.raises(ValueError):
+        calcular_frete(50, 1, 1, 1, 1, 1, "sacola")
