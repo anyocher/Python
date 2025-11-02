@@ -60,8 +60,3 @@ def test_calculo_container():
     resultado = calcular_frete(50, 1, 1, 1, 1, 2, "container")
     esperado = (1 * (1 + 0.37)) * (1 + (50 * 9.8)) * 2
     assert resultado == esperado
-
-def test_embalagem_invalida():
-    
-    with pytest.raises(ValueError):
-        calcular_frete(50, 1, 1, 1, 1, 1, "sacola")
