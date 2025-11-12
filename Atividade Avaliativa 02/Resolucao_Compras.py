@@ -54,7 +54,7 @@ opcoes = {
 }
 
 def mostrar_menu():
-    print("\n" + "-" * 50)
+    print("-" * 50)
     print("Escolha uma opção:")
     for key, (descricao, _) in opcoes.items():
         print(f" {key}) {descricao}")
