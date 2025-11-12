@@ -1,5 +1,5 @@
 import mod_inputs
-import calculadora
+import Calculadora
 import cota_frete
 import config
 import letreiro
@@ -18,7 +18,7 @@ def valida_menu(num):
         case 0:
             programa = False
         case 1:
-            calculadora.main()
+            Calculadora.main()
         case 2:
             cota_frete.main()
         case _:

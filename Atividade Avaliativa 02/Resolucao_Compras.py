@@ -1,6 +1,8 @@
 import pandas as pd
+import os
+def limpa_tela():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-# Dados fornecidos
 dados = {
     'Item': [1209, 1312, 1529, 1312, 2026, 1759, 1516, 1516, 1312, 1209],
     'Produto': ['Mouse', 'Teclado', 'Gabinete', 'Memoria', 'Gabinete', 'Memoria', 'Mouse', 'HD', 'Mouse', 'Mouse'],
@@ -68,7 +70,7 @@ while True:
         break
     elif escolha in opcoes:
         print("-" * 50)
-        opcoes[escolha][1]()  # executa a função correspondente
+        opcoes[escolha][1]()  
         print("-" * 50)
     else:
         print("\n Opção inválida! Tente novamente.")
