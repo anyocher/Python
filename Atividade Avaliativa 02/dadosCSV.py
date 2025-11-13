@@ -1,18 +1,19 @@
 import pandas as pd
 
-# Criar dados fictícios de vendas
+# Dados fornecidos pelo usuário (baseados no anexo)
 dados = {
-    'Venda': [1, 2, 3, 4, 5, 6, 7, 8],
-    'Produto': ['Mouse', 'Teclado', 'Monitor', 'Mouse', 'Teclado', 'Cadeira', 'Notebook', 'Headset'],
-    'Quantidade': [2, 3, 1, 5, 2, 1, 4, 2],
-    'Valor_Unitario': [50, 150, 700, 50, 150, 500, 3000, 200]
+    'Item': [1209, 1312, 1529, 1312, 2026, 1759, 1516, 1822, 1516, 1516],
+    'Produto': ['Mouse', 'Teclado', 'Gabinete', 'Memoria', 'Gabinete', 'Memoria', 'Mouse', 'HD', 'Mouse', 'Mouse'],
+    'Marca': ['R3', 'HP', 'Ship', 'Kingston', 'V12', 'Sandisk', 'Microsoft', 'Adata', 'Microsoft', 'Microsoft'],
+    'Quantidade': [2, 3, 1, 2, 1, 3, 1, 2, 3, 1],
+    'Preço Uni': [139.9, 39, 156, 250, 220, 99.9, 99.9, 219.9, 99.9, 99.9]
 }
 
 # Criar DataFrame
 df = pd.DataFrame(dados)
 
-# Salvar como CSV
-caminho_csv = "/mnt/data/vendas_exemplo.csv"
+# Salvar arquivo CSV
+caminho_csv = "/mnt/data/vendas_anexo.csv"
 df.to_csv(caminho_csv, index=False)
 
 caminho_csv
