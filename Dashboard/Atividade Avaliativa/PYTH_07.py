@@ -1,23 +1,49 @@
 import pandas as pd
 
-url = "https://raw.githubusercontent.com/JansenLeite/Python/main/PYTH_07_01_Inventario.csv"
-df = pd.read_csv(url, sep=";")
+def carregar_dados(url):
+   
+    return pd.read_csv(url, sep=";")
 
-df["PurchasePriceTotal"] = df["PurchasePrice"] * df["StockQuantity"]
-df["SalePriceTotal"] = df["SalePrice"] * df["StockQuantity"]
+def calcular_totais(df):
+ 
+    df["PurchasePriceTotal"] = df["PurchasePrice"] * df["StockQuantity"]
+    df["SalePriceTotal"] = df["SalePrice"] * df["StockQuantity"]
+    return df
 
-df.to_csv("inventario_totais.csv", index=False)
-df.to_excel("inventario_totais.xlsx", index=False)
+def salvar_arquivos(df, prefixo="inventario"):
+  
+    df.to_csv(f"{prefixo}_totais.csv", index=False)
+    df.to_excel(f"{prefixo}_totais.xlsx", index=False)
 
-df_fornecedor = df.groupby("Supplier").sum(numeric_only=True).reset_index()
-df_fornecedor = df_fornecedor.sort_values("Supplier")
+def gerar_relatorio_fornecedores(df):
+    
+    df_fornecedor = df.groupby("Supplier").sum(numeric_only=True).reset_index()
+    df_fornecedor = df_fornecedor.sort_values("Supplier")
+    return df_fornecedor
 
-df_fornecedor.to_csv("inventario_fornecedores.csv", index=False)
-df_fornecedor.to_excel("inventario_fornecedores.xlsx", index=False)
+def filtrar_acima60(df):
+   
+    return df[df["StockQuantity"] > 60]
 
-df_acima60 = df[df["StockQuantity"] > 60]
+def main(url):
+  
+    df = carregar_dados(url)
+    
 
-df_acima60.to_csv("inventario_acima60.csv", index=False)
-df_acima60.to_excel("inventario_acima60.xlsx", index=False)
+    df = calcular_totais(df)
+    
+    salvar_arquivos(df)
+    
+    df_fornecedor = gerar_relatorio_fornecedores(df)
+    salvar_arquivos(df_fornecedor, prefixo="inventario_fornecedores")
+    
+    df_acima60 = filtrar_acima60(df)
+    salvar_arquivos(df_acima60, prefixo="inventario_acima60")
+    
+    print("Arquivos gerados...")
 
-print("Arquivos gerado...")
+# URL do arquivo CSV
+# url = "https://raw.githubusercontent.com/JansenLeite/Python/main/PYTH_07_01_Inventario.csv"
+
+# main(url)
+
