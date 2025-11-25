@@ -8,10 +8,9 @@ def calcular_totais(df):
     df["SalePriceTotal"] = df["SalePrice"] * df["StockQuantity"]
     return df
 
-
 def salvar_arquivos(df, prefixo="inventario"):
     df.to_csv(f"{prefixo}.csv", index=False)
-    # df.to_excel(f"{prefixo}.xlsx", index=False)
+    df.to_excel(f"{prefixo}.xlsx", index=False)
 
 def gerar_relatorio_fornecedores(df):
     df_fornecedor = df.groupby("Supplier").sum(numeric_only=True).reset_index()
