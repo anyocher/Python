@@ -1,5 +1,7 @@
 import pandas as pd
 
+# URL do arquivo do professor
+url = "https://raw.githubusercontent.com/JansenLeite/Python/main/PYTH_07_01_Inventario.csv"
 def carregar_dados(url):
     return pd.read_csv(url, sep=";")
 
@@ -34,7 +36,4 @@ def main(url):
 
     print("Arquivos gerados...")
 
-# URL do arquivo CSV
-url = "https://raw.githubusercontent.com/JansenLeite/Python/main/PYTH_07_01_Inventario.csv"
-
-main(url)
+main(url) # rodar o programa com url fornecida
